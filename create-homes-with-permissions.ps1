@@ -44,7 +44,7 @@ $selectedIndizes | %{
         # break inheritance
         $Acl.SetAccessRuleProtection($true, $false)
 
-        # $_.Name equals the folder name
+        # $_.SamAccountName equals the folder name
         $ArAdmin = New-Object  System.Security.AccessControl.FileSystemAccessRule($administrativePrinciple, "FullControl", "ContainerInherit,ObjectInherit","None", "Allow")
         $ArUser = New-Object  System.Security.AccessControl.FileSystemAccessRule($_.SamAccountName ,"Modify","ContainerInherit,ObjectInherit","None", "Allow")
 
